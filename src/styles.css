@@ -1,5 +1,5 @@
 body{
-    background-color: #faeff5;
+    background-color: #ecd4e1;;
     font-family: poppins;
     color: #393D72;
 }
@@ -66,17 +66,25 @@ h2 {
     display: flex;
 
 }
-.temp-emoji{
-    font-size: 20px;
-    margin-right: 10px;
-    margin-top: 10px;
+#temp-emoji{
+    font-size: 30px;
+    margin-right: -10px;
+    margin-top: -20px;
+    border: 1px solid #fff0f0;
+    height: 100px;
+    position: absolute;
+    width: 150px;
+    
 }
-.temp-no{
-    font-size: 35px;
+#temp-no{
+    font-size: 30px;
     font-weight: 500;
+    margin-left: 95px;
+    margin-top: 10px;
 }
 .temp-unit{
     font-size: 18px;
+    margin-top: 15px;
 }
 
 .Group_DayOfWeek{
@@ -97,7 +105,11 @@ h2 {
     border-radius: 6px;
     margin: 4px 6px;
 }
-
+#description{
+    color: #725f39;
+    text-transform: capitalize;
+    font-style: bold;
+}
 footer{
     font-weight: 100;
 }

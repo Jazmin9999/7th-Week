@@ -20,7 +20,7 @@
   <body>
     <div class="weather-container">
       <header>
-        <form action="" clas="weather-form" id="weather-form">
+        <form action="" class="weather-form" id="weather-form">
           <input
             type="search"
             name=""
@@ -37,15 +37,16 @@
             <div class="weather-main-details">
               <div class="info-except-temp">
                 <h2 id="city-name">City Name</h2>
-
-                18:00,
+                <span id="time">18:00</span>,<span id="day"> Sun</span>
                 <br />
-                Humidity: 15%
+                Humidity: <span id="humidity"> 15</span>%
                 <br />
-                Wind: 8kms
+                Wind: <span id="wind">8</span>8kms
+                <div id="description">Cloudy</div>
+                <br />
               </div>
               <div class="temp">
-                <div class="temp-emoji">🌨️</div>
+                <div id="temp-emoji">🌨️</div>
                 <div id="temp-no">18</div>
                 <div class="temp-unit">℃</div>
               </div>
