@@ -19,7 +19,7 @@ function updateImage(response){
 }
 function updateTimeDay(response){
 
-    let dato= new Date(response.data.);
+    let dato= new Date((response.data.time)*1000);//changing to milisec
     //updating time
     console.log(response)
     let time = document.querySelector("#time");

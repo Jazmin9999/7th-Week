@@ -10,7 +10,7 @@ body{
     background-color: #faf9fa;
     padding: 25px;
     border: none;
-    box-shadow: 2px 2px 7px;
+    box-shadow: 2px 2px 7px; /* great look */
     border-radius: 6px;
 }
 header{
