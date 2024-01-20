@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tenki App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="src/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,6 +43,7 @@
             <div class="weather-main-details">
               <div class="info-except-temp">
                 <h2 id="city-name"></h2>
+                <br />
                 <span id="time"></span>,<span id="day"> </span>
                 <br />
                 Humidity: <span id="humidity"> </span>%
@@ -66,6 +73,10 @@
           </div>
         </div>
       </main>
+      <div id="row-weather-forecast">
+        <div class="weather-forecast-part" id="weather-forecast"></div>
+      </div>
+
       <footer>
         Coded By
         <a href="https://github.com/Jazmin9999/">Pwint Saple</a>

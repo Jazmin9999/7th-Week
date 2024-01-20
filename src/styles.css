@@ -61,6 +61,9 @@ h2 {
     display: flex;
     justify-content: space-between;
 }
+.info-except-temp{
+    padding-left: 15px;
+}
 .temp{
     padding: 30px;
     display: flex;
@@ -118,5 +121,25 @@ a{
     font-weight: 400;
 }
 
-
-
+.weather-forecast-day{
+    color: #393D72;
+    font-size: 15px;
+    align-items: center;
+}
+.weather-forecast-icon{
+    align-items: center;
+    width: 30px;
+}
+.weather-forecast-temperature{
+    font-size: 13px;
+    font-style: bold;
+    align-items: center;
+    color: #FF4880;
+}
+.weather-forecast-temperature-min{
+    opacity: 0.5;
+}
+#weather-forecast{
+    display: flex;
+    justify-content: space-between;
+}

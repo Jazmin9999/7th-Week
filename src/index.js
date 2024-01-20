@@ -55,3 +55,30 @@ let formElement = document.querySelector("#weather-form");
 formElement.addEventListener("submit",getCityName)
 searchCity("yangon");
 
+let forecast = document.querySelector("#weather-forecast");
+forecast.innerHTML=`
+            <div><div class="weather-forecast-day">Thu</div>
+            <img
+              class="weather-forecast-icon"
+              src="src/mist-night.png"
+              alt="weather icon"
+            />
+            <div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max">18°</span>
+              <span class="weather-forecast-temperature-min">13°</span>
+            </div></div>
+            <div><div class="weather-forecast-day">Thu</div>
+            <img
+              class="weather-forecast-icon"
+              src="src/mist-night.png"
+              alt="weather icon"
+            />
+            <div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max">18°</span>
+              <span class="weather-forecast-temperature-min">13°</span>
+            </div></div>
+            
+
+            
+         `;
+
