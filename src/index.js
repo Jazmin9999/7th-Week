@@ -85,6 +85,9 @@ function displayForecast(response){
         }
         
     });
+
+    
+   
 }
 function getForecast(city){
 
