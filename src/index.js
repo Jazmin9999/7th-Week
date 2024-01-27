@@ -11,6 +11,7 @@ function retrieveTemp(response){
     updateTimeDay(response);
     updateWeatherDescription(response);
     updateImage(response);
+    getForecast(response.data.city);
 
 }
 function updateImage(response){
@@ -25,9 +26,9 @@ function updateTimeDay(response){
     let time = document.querySelector("#time");
     time.innerHTML = dato.getHours() +":"+dato.getMinutes();
     //updating days
-    let days = ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"];
+    let days = ["Sun","Mon","Tues"," Wed","Thu","Fri","Sat"];
     let dayofWeek = document.querySelector("#day");
-    dayofWeek.innerHTML=days[dato.getDay()];
+    dayofWeek.innerHTML=` ${days[dato.getDay()]}`;
 }
 function updateWeatherDescription(response){
     let weatherDes = document.querySelector("#description");
@@ -50,35 +51,50 @@ function getCityName(response){
     console.log(searchInputElement.value + " is city name to searched")
     searchCity(searchInputElement.value);
     
+    
 }
+
+function formatDay(time){
+    let newDate = new Date(time*1000);
+    let days = ["Sun", "Mon","Tue","Wed","Thurs", "Fri","Sat"]
+    return days[newDate.getDay()];
+}
+
+function displayForecast(response){
+    
+    console.log(response)
+    console.log(response.data.daily)
+    let days = ["Sun","Mon","Tue","Wed","Thu","Fri"]
+    let forecast = document.querySelector("#weather-forecast");
+    forecast.innerHTML="";
+    response.data.daily.forEach(function(d,i) {
+        if(i<5){
+            forecast.innerHTML+=`
+            <div><div class="weather-forecast-day">${formatDay(d.time)}</div>
+            <img
+              class="weather-forecast-icon"
+              src="${d.condition.icon_url}"
+              alt="weather icon"
+            />
+            <div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max">${Math.round( d.temperature.maximum)}°</span>
+              <span class="weather-forecast-temperature-min">${Math.round( d.temperature.minimum)}°</span>
+            </div></div>
+            
+         `;
+        }
+        
+    });
+}
+function getForecast(city){
+
+    apiKey = "250t2994af0bo866e5541f92ce36ba87";
+    apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    //console.log(apiUrl)
+    axios(apiUrl).then(displayForecast);
+    console.log(apiUrl)
+}
+
 let formElement = document.querySelector("#weather-form");
 formElement.addEventListener("submit",getCityName)
 searchCity("yangon");
-
-let forecast = document.querySelector("#weather-forecast");
-forecast.innerHTML=`
-            <div><div class="weather-forecast-day">Thu</div>
-            <img
-              class="weather-forecast-icon"
-              src="src/mist-night.png"
-              alt="weather icon"
-            />
-            <div class="weather-forecast-temperature">
-              <span class="weather-forecast-temperature-max">18°</span>
-              <span class="weather-forecast-temperature-min">13°</span>
-            </div></div>
-            <div><div class="weather-forecast-day">Thu</div>
-            <img
-              class="weather-forecast-icon"
-              src="src/mist-night.png"
-              alt="weather icon"
-            />
-            <div class="weather-forecast-temperature">
-              <span class="weather-forecast-temperature-max">18°</span>
-              <span class="weather-forecast-temperature-min">13°</span>
-            </div></div>
-            
-
-            
-         `;
-
